@@ -189,7 +189,7 @@ export default function ProductBrowser({ items, showCategories = true, emptyCta 
           <button className="chip filter-toggle" onClick={() => setSheet(true)} aria-haspopup="dialog">
             <Icon name="filter" size={16} /> Filters{chips.length > 0 && <span className="filter-toggle__count">{chips.length}</span>}
           </button>
-          <span className="toolbar__count" aria-live="polite">{results.length} {results.length === 1 ? 'design' : 'designs'}</span>
+          <span className="toolbar__count" aria-live="polite">{results.length === items.length ? `${items.length} designs` : `${results.length} of ${items.length} designs`}</span>
         </div>
         <label className="toolbar__search">
           <Icon name="search" size={17} />

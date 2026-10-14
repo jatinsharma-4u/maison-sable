@@ -23,19 +23,22 @@ export default function Shop() {
       <section className="page-hero shop-hero">
         <div className="container">
           <Crumbs items={[{ label: 'Home', to: '/' }, { label: 'Shop', to: cat ? '/shop' : undefined }, ...(cat ? [{ label: cat.name }] : [])]} />
-          <div className="shop-hero__grid">
-            <Reveal className="page-hero__inner">
-              <span className="eyebrow">{cat ? `${items.length} designs` : `${products.length} designs · 9 categories`}</span>
-              <h1 className="h1">{cat ? cat.name : <>Every piece, <em>made for you</em></>}</h1>
-              <p className="lede">{cat ? cat.intro : 'Start with a design. Change everything else.'}</p>
-            </Reveal>
-            {cat && (
-              <Reveal delay={0.1} className="shop-hero__img">
-                <Img src={cat.hero} sm={cat.hero.replace('.webp', '-sm.webp')} alt="" sizes="(max-width: 900px) 100vw, 45vw" eager />
-              </Reveal>
-            )}
-          </div>
-          <nav className="catnav" aria-label="Categories" style={{ marginTop: 28 }}>
+          {cat ? (
+            <div className="cat-banner">
+              <Img src={cat.hero} sm={cat.hero.replace('.webp', '-sm.webp')} alt="" sizes="100vw" eager />
+              <div className="cat-banner__text">
+                <h1 className="cat-banner__title">{cat.name}</h1>
+                <p>{cat.intro}</p>
+              </div>
+              <span className="cat-banner__count">{items.length} designs</span>
+            </div>
+          ) : (
+            <div className="shop-head">
+              <h1 className="h1">Every piece, <em>made for you</em></h1>
+              <p className="lede">Start with a design. Change everything else.</p>
+            </div>
+          )}
+          <nav className="catnav" aria-label="Categories">
             <Link to="/shop" className={`chip ${!cat ? 'is-active' : ''}`} aria-current={!cat ? 'page' : undefined}>All</Link>
             {categories.map((c) => (
               <Link key={c.slug} to={`/shop/${c.slug}`} className={`chip ${cat?.slug === c.slug ? 'is-active' : ''}`} aria-current={cat?.slug === c.slug ? 'page' : undefined}>
