@@ -159,7 +159,7 @@ export default function Header() {
         <div className="container header__inner">
           <Link to="/" className="logo" aria-label={`${site.name} — home`}>
             <span className="logo__mark" aria-hidden>
-              <svg viewBox="0 0 32 32" width="28" height="28"><rect width="32" height="32" rx="5" fill="currentColor" /><path d="M9 21c0-3.2 3-4.8 7-4.8s7 1.6 7 4.8v2H9z" fill="var(--logo-inner)" /><rect x="11.5" y="9" width="9" height="7.6" rx="3.4" fill="var(--logo-inner)" /></svg>
+              <svg viewBox="0 0 32 32" width="30" height="30" fill="none" stroke="currentColor" strokeLinecap="round"><rect x="0.75" y="0.75" width="30.5" height="30.5" rx="4" strokeWidth="1.3" /><path d="M10.5 24.5V15a5.5 5.5 0 0 1 11 0v9.5" strokeWidth="1.6" /><path d="M7.5 24.5h17" strokeWidth="1.6" /><path d="M13.5 19.5h5" strokeWidth="1.4" /></svg>
             </span>
             <span className="logo__word">Maison <em>Sable</em></span>
           </Link>
@@ -264,7 +264,7 @@ function MobileMenu({ open, onClose }) {
           data-lenis-prevent
         >
           <div className="mmenu__top container">
-            <Link to="/" className="logo" onClick={onClose}><span className="logo__word">Maison <em>Sable</em></span></Link>
+            <Link to="/" className="logo" onClick={onClose}><span className="logo__mark" aria-hidden><svg viewBox="0 0 32 32" width="30" height="30" fill="none" stroke="currentColor" strokeLinecap="round"><rect x="0.75" y="0.75" width="30.5" height="30.5" rx="4" strokeWidth="1.3" /><path d="M10.5 24.5V15a5.5 5.5 0 0 1 11 0v9.5" strokeWidth="1.6" /><path d="M7.5 24.5h17" strokeWidth="1.6" /><path d="M13.5 19.5h5" strokeWidth="1.4" /></svg></span><span className="logo__word">Maison <em>Sable</em></span></Link>
             <button className="icon-btn icon-btn--solid" onClick={onClose} aria-label="Close menu" autoFocus><Icon name="close" /></button>
           </div>
           <motion.nav

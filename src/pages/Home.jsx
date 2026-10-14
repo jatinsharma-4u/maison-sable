@@ -8,6 +8,7 @@ import { products, getProduct, leadText } from '../data/products';
 import { categories, collections, getCategory, journal, testimonials } from '../data/catalog';
 import { formatPrice } from '../data/site';
 import { useGsap } from '../lib/motion';
+import { introDone } from '../lib/intro';
 import { useSeo } from '../lib/seo';
 
 const heroSlides = [
@@ -31,8 +32,15 @@ function Hero() {
   const ref = useGsap((gsap, ST, root) => {
     gsap.to('.hero__media', { yPercent: 14, ease: 'none', scrollTrigger: { trigger: root, start: 'top top', end: 'bottom top', scrub: true } });
     gsap.to('.hero__content', { yPercent: -18, opacity: 0.2, ease: 'none', scrollTrigger: { trigger: root, start: 'top top', end: 'bottom top', scrub: true } });
-    gsap.from('.hero__line > span', { yPercent: 110, duration: 1.2, ease: 'power4.out', stagger: 0.1, delay: 0.2 });
-    gsap.from('.hero__fade', { opacity: 0, y: 18, duration: 1, ease: 'power3.out', stagger: 0.08, delay: 0.6 });
+    // Entrance choreography — held until the first-visit loader has lifted.
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('.hero__media', { scale: 1.16 }, { scale: 1, duration: 2.2, ease: 'expo.out' }, 0)
+      .fromTo('.hero__shade', { opacity: 0.4 }, { opacity: 1, duration: 1.6, ease: 'power2.out' }, 0)
+      .from('.hero__line > span', { yPercent: 118, rotate: 2, duration: 1.3, ease: 'power4.out', stagger: 0.12 }, 0.2)
+      .from('.hero__fade', { opacity: 0, y: 24, duration: 1.1, ease: 'power3.out', stagger: 0.09 }, 0.55);
+    let alive = true;
+    introDone.then(() => alive && tl.play());
+    return () => { alive = false; };
   });
   return (
     <section className="hero" ref={ref} aria-roledescription="carousel" aria-label="Featured rooms" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>

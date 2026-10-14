@@ -31,7 +31,7 @@
 .pcard__body { padding: 14px 4px 0; display: grid; gap: 4px; }
 .pcard__row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
 .pcard__row--meta { align-items: center; }
-.pcard__name { font-family: var(--font-display); font-weight: 400; font-size: 1.06rem; line-height: 1.25; letter-spacing: 0; }
+.pcard__name { font-family: var(--font-display); font-weight: 600; font-size: 1.34rem; line-height: 1.12; letter-spacing: -0.005em; }
 .pcard__price { font-size: var(--fs-sm); font-weight: 400; white-space: nowrap; }
 .pcard__price small { font-weight: 500; color: var(--ink-3); font-size: 11px; }
 .pcard__swatches { display: inline-flex; align-items: center; flex: none; }
@@ -47,7 +47,7 @@
 .pcard__quick:hover { background: var(--ink); color: var(--on-dark); }
 .pcard__quick:focus-visible { opacity: 1; transform: translate(-50%, 0); }
 @media (max-width: 760px) {
-  .pcard__name { font-size: 0.96rem; }
+  .pcard__name { font-size: 1.16rem; }
   .pcard__row { flex-direction: column; align-items: flex-start; gap: 2px; }
   .pcard__row--meta { flex-direction: row; align-items: center; justify-content: space-between; }
   .pcard__row--meta .tiny { font-size: 11px; line-height: 1.35; }
@@ -275,7 +275,7 @@
 .mini__img { aspect-ratio: 1; border-radius: var(--r-sm); background: var(--sand); display: grid; place-items: center; overflow: hidden; }
 .mini__img img { width: 100%; height: 100%; object-fit: cover; }
 .mini__img.is-cutout img { width: 84%; height: 84%; object-fit: contain; }
-.mini strong { font-family: var(--font-display); font-weight: 400; font-size: 1.15rem; display: block; line-height: 1.15; }
+.mini strong { font-family: var(--font-display); font-weight: 600; font-size: 1.35rem; display: block; line-height: 1.15; }
 
 .sticky-buy { display: none; }
 @media (max-width: 960px) {
@@ -350,4 +350,12 @@
   .filters.is-sheet .fgroup:first-child { padding-top: 4px; }
   .filters.is-sheet .check { min-height: 40px; }
   .filters.is-sheet .swatch-btn { width: 38px; height: 38px; }
+}
+
+/* ——— Card micro-interactions */
+.pcard__media { transition: box-shadow 0.6s var(--ease), clip-path 1.1s var(--ease); }
+.pcard__name { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size 0.5s var(--ease); display: inline; }
+@media (hover: hover) {
+  .pcard:hover .pcard__media { box-shadow: 0 22px 40px -26px rgba(35, 29, 24, 0.55); }
+  .pcard:hover .pcard__name { background-size: 100% 1px; }
 }

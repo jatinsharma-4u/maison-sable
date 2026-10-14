@@ -22,18 +22,18 @@
   --danger: #a1402e;
 
   /* Type */
-  --font-display: 'Playfair Display Variable', 'Playfair Display', Georgia, serif;
-  --font-accent: 'Playfair Display Variable', 'Playfair Display', Georgia, serif;
-  --font-body: 'DM Sans Variable', 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-ui: 'DM Sans Variable', 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Cormorant Garamond Variable', 'Cormorant Garamond', Georgia, serif;
+  --font-accent: 'Cormorant Garamond Variable', 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Figtree Variable', 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-ui: 'Figtree Variable', 'Figtree', system-ui, sans-serif;
   --fs-xs: 0.75rem;
   --fs-sm: 0.875rem;
   --fs-md: 1rem;
   --fs-lg: 1.125rem;
   --fs-xl: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
-  --fs-h3: clamp(1.35rem, 1.2rem + 0.7vw, 1.75rem);
-  --fs-h2: clamp(1.85rem, 1.35rem + 2vw, 3rem);
-  --fs-h1: clamp(2.2rem, 1.5rem + 3.2vw, 4.25rem);
+  --fs-h3: clamp(1.6rem, 1.4rem + 0.8vw, 2.1rem);
+  --fs-h2: clamp(2.25rem, 1.6rem + 2.4vw, 3.7rem);
+  --fs-h1: clamp(2.7rem, 1.8rem + 3.8vw, 5.2rem);
   --fs-display: clamp(3.4rem, 1.6rem + 8vw, 9.5rem);
 
   /* Space (4px base) */

@@ -5,6 +5,7 @@ import Header, { MobileTabBar } from './components/Header';
 import Footer from './components/Footer';
 import { QuoteDrawer, Toast } from './components/Overlays';
 import { ScrollTrigger, scrollToTop, useSmoothScroll } from './lib/motion';
+import { useImageReveals } from './lib/reveal';
 import Home from './pages/Home';
 
 const Shop = lazy(() => import('./pages/Shop'));
@@ -25,18 +26,19 @@ const Legal = lazy(() => import('./pages/Legal'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 function PageFallback() {
-  return <div className="page-loading" role="status" aria-label="Loading page"><span /></div>;
+  return <div className="page-loading" role="status" aria-label="Loading page" />;
 }
 
 const page = {
-  initial: { opacity: 0, y: 16 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
-  exit: { opacity: 0, transition: { duration: 0.25 } },
+  initial: { opacity: 0, y: 26 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
+  exit: { opacity: 0, y: -10, transition: { duration: 0.28, ease: [0.4, 0, 1, 1] } },
 };
 
 export default function App() {
   useSmoothScroll();
   const location = useLocation();
+  useImageReveals(location.pathname);
 
   useEffect(() => {
     // Dev-only: `?__y=1200` scrolls on load (used for automated screenshot QA).
@@ -57,6 +59,13 @@ export default function App() {
 
   return (
     <MotionConfig reducedMotion="user">
+      <motion.div
+        key={`bar-${location.pathname}`}
+        className="route-bar"
+        initial={{ scaleX: 0, opacity: 1 }}
+        animate={{ scaleX: 1, opacity: 0, transition: { scaleX: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }, opacity: { duration: 0.4, delay: 0.6 } } }}
+        aria-hidden
+      />
       <Header />
       <main id="main" tabIndex={-1}>
         <AnimatePresence mode="wait" onExitComplete={scrollToTop}>
