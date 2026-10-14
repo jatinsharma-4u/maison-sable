@@ -31,8 +31,8 @@
 .logo { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); justify-self: start; white-space: nowrap; line-height: 1; }
 .logo__mark { color: currentColor; display: grid; place-items: center; flex: none; transition: transform 0.6s var(--ease); }
 .logo:hover .logo__mark { transform: rotate(-4deg) scale(1.04); }
-.logo__word { font-family: var(--font-display); font-weight: 600; font-size: 1.62rem; line-height: 1; letter-spacing: 0.005em; padding-top: 2px; }
-.logo__word em { font-style: italic; font-weight: 500; color: var(--clay); }
+.logo__word { font-family: var(--font-display); font-weight: 450; font-size: 1.42rem; line-height: 1; letter-spacing: -0.015em; padding-top: 1px; }
+.logo__word em { font-style: italic; font-weight: 400; color: var(--clay); }
 
 .nav__list { display: flex; gap: 4px; }
 .nav__link {
@@ -62,7 +62,7 @@
   .nav { display: none; }
   .menu-btn { display: grid; }
   .hide-sm { display: none !important; }
-  .logo__word { font-size: 1.42rem; }
+  .logo__word { font-size: 1.24rem; }
   .logo__mark svg { width: 27px; height: 27px; }
 }
 
@@ -86,14 +86,14 @@
 .mega__feature img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
 .mega__feature:hover img { transform: scale(1.05); }
 .mega__feature::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(20, 15, 12, 0.6)); }
-.mega__feature-label { position: absolute; left: 18px; bottom: 16px; right: 18px; z-index: 1; color: #fff; font-family: var(--font-display); font-weight: 500; font-size: 1.7rem; line-height: 1.1; }
+.mega__feature-label { position: absolute; left: 18px; bottom: 16px; right: 18px; z-index: 1; color: #fff; font-family: var(--font-display); font-weight: 400; font-size: 1.45rem; line-height: 1.1; }
 .mega__feature-label small { display: block; font-family: var(--font-body); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.8; margin-bottom: 6px; }
 .mega__grid--rooms { grid-template-columns: repeat(6, 1fr); gap: var(--s-4); }
 .mega__room { display: grid; gap: 6px; align-content: start; }
 .mega__room-img { aspect-ratio: 4 / 5; border-radius: var(--r-md); overflow: hidden; background: var(--sand); margin-bottom: 6px; }
 .mega__room-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
 .mega__room:hover .mega__room-img img { transform: scale(1.06); }
-.mega__room-name { font-family: var(--font-display); font-weight: 600; font-size: 1.45rem; line-height: 1.1; }
+.mega__room-name { font-family: var(--font-display); font-weight: 400; font-size: 1.25rem; line-height: 1.15; }
 
 /* ——— Mobile menu */
 .mmenu { position: fixed; inset: 0; z-index: 90; background: var(--bg); display: flex; flex-direction: column; overflow-y: auto; padding-bottom: calc(24px + env(safe-area-inset-bottom)); }
@@ -101,7 +101,7 @@
 .mmenu__nav { flex: 1; padding-top: var(--s-5); }
 .mmenu__link {
   display: flex; width: 100%; justify-content: space-between; align-items: center;
-  font-family: var(--font-display); font-weight: 500; font-size: clamp(2rem, 9vw, 2.7rem); line-height: 1.2; padding: 12px 0; letter-spacing: -0.02em;
+  font-family: var(--font-display); font-weight: 350; font-size: clamp(1.7rem, 7.6vw, 2.3rem); line-height: 1.2; padding: 12px 0; letter-spacing: -0.02em;
   border-bottom: 1px solid var(--line); text-align: left;
 }
 .mmenu__link .rot { transform: rotate(180deg); }
@@ -217,7 +217,7 @@ body.has-curtain main { box-shadow: 0 30px 60px rgba(20, 15, 12, 0.18); }
 .footer__ribbon img { width: clamp(130px, 13vw, 200px); aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--r-sm); filter: saturate(0.85) brightness(0.88); }
 .footer__top { display: grid; grid-template-columns: 1fr 1.4fr; gap: var(--s-8); padding-block: clamp(32px, 4vw, 56px) var(--s-6); }
 .footer__kicker { font-size: var(--fs-xs); letter-spacing: 0.16em; text-transform: uppercase; color: var(--on-dark-2); margin-bottom: 14px; }
-.footer__headline { font-family: var(--font-display); font-weight: 500; font-size: clamp(2.3rem, 1.6rem + 2.4vw, 3.6rem); line-height: 1.08; letter-spacing: -0.02em; max-width: 13ch; }
+.footer__headline { font-family: var(--font-display); font-weight: 350; font-size: clamp(1.9rem, 1.35rem + 2vw, 3rem); line-height: 1.08; letter-spacing: -0.02em; max-width: 13ch; }
 .footer__headline em { font-style: italic; color: var(--stone); }
 .footer__cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-5); }
 .footer__h { font-size: var(--fs-xs); letter-spacing: 0.16em; text-transform: uppercase; color: var(--on-dark-2); font-weight: 500; margin-bottom: var(--s-4); }

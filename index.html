@@ -15,7 +15,7 @@
     <style>
       #ms-loader {
         position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center;
-        background: #1f1915; color: #f3ece1; font-family: 'Cormorant Garamond Variable', 'Cormorant Garamond', Georgia, serif;
+        background: #1f1915; color: #f3ece1; font-family: 'Fraunces Variable', 'Fraunces', Georgia, serif;
         transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1);
       }
       .ms-skip-intro #ms-loader { display: none; }
@@ -24,9 +24,9 @@
       #ms-loader.is-leaving .l-inner { opacity: 0; transform: translateY(-40px); }
       #ms-loader .l-mark { width: 44px; height: 44px; opacity: 0; animation: l-fade 0.8s 0.1s ease forwards; }
       #ms-loader .l-mark { color: #f3ece1; }
-      #ms-loader .l-word { display: flex; gap: 0; font-size: clamp(2.4rem, 7vw, 3.6rem); font-weight: 600; letter-spacing: 0.01em; overflow: hidden; padding: 0.06em 0.05em 0.16em; line-height: 1; }
+      #ms-loader .l-word { display: flex; gap: 0; font-size: clamp(2rem, 6vw, 3rem); font-weight: 400; letter-spacing: -0.02em; overflow: hidden; padding: 0.06em 0.05em 0.16em; line-height: 1; }
       #ms-loader .l-word span { display: inline-block; transform: translateY(110%); animation: l-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-      #ms-loader .l-word .s { color: #a8714c; font-weight: 500; font-style: italic; }
+      #ms-loader .l-word .s { color: #a8714c; font-weight: 400; font-style: italic; }
       #ms-loader .l-tag { font-family: 'Figtree Variable', 'Figtree', system-ui, sans-serif; font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: rgba(243, 236, 225, 0.6); opacity: 0; animation: l-fade 0.8s 0.9s ease forwards; }
       #ms-loader .l-bar { position: absolute; left: 50%; bottom: 14vh; width: min(220px, 50vw); height: 1px; transform: translateX(-50%); background: rgba(243, 236, 225, 0.16); overflow: hidden; }
       #ms-loader .l-bar i { position: absolute; inset: 0; background: #c9b9a0; transform-origin: left; transform: scaleX(0); animation: l-load 1.8s cubic-bezier(0.3, 0.6, 0.2, 1) forwards; }

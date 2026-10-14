@@ -22,8 +22,8 @@
   --danger: #a1402e;
 
   /* Type */
-  --font-display: 'Cormorant Garamond Variable', 'Cormorant Garamond', Georgia, serif;
-  --font-accent: 'Cormorant Garamond Variable', 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Fraunces Variable', 'Fraunces', Georgia, serif;
+  --font-accent: 'Fraunces Variable', 'Fraunces', Georgia, serif;
   --font-body: 'Figtree Variable', 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-ui: 'Figtree Variable', 'Figtree', system-ui, sans-serif;
   --fs-xs: 0.75rem;
@@ -31,9 +31,9 @@
   --fs-md: 1rem;
   --fs-lg: 1.125rem;
   --fs-xl: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
-  --fs-h3: clamp(1.6rem, 1.4rem + 0.8vw, 2.1rem);
-  --fs-h2: clamp(2.25rem, 1.6rem + 2.4vw, 3.7rem);
-  --fs-h1: clamp(2.7rem, 1.8rem + 3.8vw, 5.2rem);
+  --fs-h3: clamp(1.35rem, 1.2rem + 0.6vw, 1.75rem);
+  --fs-h2: clamp(1.9rem, 1.4rem + 2vw, 3.1rem);
+  --fs-h1: clamp(2.2rem, 1.5rem + 3.1vw, 4.3rem);
   --fs-display: clamp(3.4rem, 1.6rem + 8vw, 9.5rem);
 
   /* Space (4px base) */

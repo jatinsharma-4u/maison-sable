@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import '@fontsource-variable/cormorant-garamond';
-import '@fontsource-variable/cormorant-garamond/wght-italic.css';
+import '@fontsource-variable/fraunces/opsz.css';
+import '@fontsource-variable/fraunces/opsz-italic.css';
 import '@fontsource-variable/figtree';
 import './styles/tokens.css';
 import './styles/base.css';
